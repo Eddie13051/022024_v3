@@ -19,7 +19,9 @@ const getLatestNews = async () => {
 const getNewsByCategory = async (event) => {
   const category = event.target.textContent.toLowerCase();
   console.log("category", category);
-  const url = new URL(`https://bespoke-peony-901aa4.netlify.app/`);
+  const url = new URL(
+    `http://times-node-env.eba-appvq3ef.ap-northeast-2.elasticbeanstalk.com/top-headlines?category=${category}`
+  );
   const response = await fetch(url);
   const data = await response.json();
   console.log("DDD", data);
@@ -30,7 +32,9 @@ const getNewsByCategory = async (event) => {
 const getNewsByKeyword = async () => {
   const keyword = document.getElementById("search-input").value;
   console.log("keyword", keyword);
-  const url = new URL(`https://bespoke-peony-901aa4.netlify.app/`);
+  const url = new URL(
+    `http://times-node-env.eba-appvq3ef.ap-northeast-2.elasticbeanstalk.com/top-headlines?q=${keyword}`
+  );
   const response = await fetch(url);
   const data = await response.json();
   console.log("keyword-data", data);
