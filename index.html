@@ -10,10 +10,34 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="side-menu" id="mySidenav">
+      <button class="closebtn" onclick="closeNav()">&times;</button>
+      <div class="side-menu-list" id="menu-list">
+        <button>Entertainment</button>
+        <button>Science</button>
+        <button>Health</button>
+        <button>Business</button>
+        <button>Technology</button>
+        <button>General</button>
+      </div>
+    </div>
+
+    <i class="fas fa-bars hide icon-button" onclick="openNav()"></i>
+    <i class="fas fa-search icon-button" onclick="openSearchBox()"></i>
+    <span id="input-area">
+      <input type="text" id="search" placeholder="search" />
+      <button class="search-button" onclick="searchNews()">Go</button>
+    </span>
+
     <section class="container">
+      <div>
+        <input id="search-input" type="text" />
+        <button onclick="getNewsByKeyword()">검색</button>
+      </div>
       <section>
         <div class="head-line">
           <svg viewBox="0 0 184 25" fill="#000" aria-hidden="true">
@@ -23,12 +47,12 @@
           </svg>
         </div>
         <div class="menus">
-          <button>entertainment</button>
-          <button>science</button>
-          <button>health</button>
-          <button>business</button>
-          <button>technology</button>
-          <button>general</button>
+          <button>Entertainment</button>
+          <button>Science</button>
+          <button>Health</button>
+          <button>Business</button>
+          <button>Technology</button>
+          <button>General</button>
         </div>
       </section>
       <section id="news-board">
